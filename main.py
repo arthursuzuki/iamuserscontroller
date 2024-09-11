@@ -2,10 +2,9 @@ import os
 from generatepassword import generate_password
 import subprocess
 from users import createUsersException, getUsersList
-
-newPassword = generate_password()
-print(newPassword)
-
+#NAO RODAR
+#se for rodar tirar esse exit()
+exit()
 users = list(getUsersList())
 i = int(input("You have any users exeptions? (1 for yes, other number to continue )"))
 if(i==1):

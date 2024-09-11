@@ -14,7 +14,7 @@ def getUsersList():
     users = list()
     for user in response['Users']:
         users.append(user['UserName'])
-
+    users.remove("admin")
     print(users)
     return users
 
