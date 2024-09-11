@@ -30,11 +30,23 @@ def createUsersException(users):
         print(f"Users to be removed: {lista}")
         for user in lista:
             if user in users:
-                users.remove(user)
-                print(f"Usuário {user} removed from list.")
+                    users.remove(user)
+                    print(f"User {user} removed from list.")
+                
             else:
                 print(f"Usuário {user} not found.")
         
-        print(f"Lista final de usuários: {users}")
+        print(f"Final users list: {users}")
     except:
         print("Error creating users exceptions")
+
+
+def createUsersList():
+    users = str(input("Place here the names of the users: "))
+    users = users.split()
+    return(users)
+
+
+
+
+
