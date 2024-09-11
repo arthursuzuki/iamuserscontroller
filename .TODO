@@ -1,2 +1,4 @@
-integrate with aws SES (simple email service)
-creating or importing a more complex method of generating passwords
+integrate with aws SES (simple email service), so users can recive by e-mail their new passwors;
+creating or importing a more complex method of generating passwords;
+push to production;
+have the possibility for the code to run within predefined intervals, eliminating the need to run the code every time.
