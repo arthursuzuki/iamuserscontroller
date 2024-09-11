@@ -9,8 +9,13 @@ def loginAws():
     
     idKey = os.getenv('CREDENTIALKYID')
     psKey = os.getenv('CREDENTIALKYPSW')
+
+    if checkLogin() == True:
+        print("Login Successful")
+        return True
+    
  
-    #command = ['aws', 'configure', 'set', 'aws_acess_key_id', idKey] , "aws_secret_acess_key"
+    #command = ['aws', 'configure', 'set', 'aws_acess_key_id', env_variable] , "aws_secret_acess_key"
     try:
         #send idkey to terminal
         command = ['aws', 'configure', 'set', 'aws_acess_key_id', idKey]
@@ -22,13 +27,13 @@ def loginAws():
 
         #send default region name
         #send default output format
-        #need to check if login was successfull
+        #need to check if login was successful
         if (checkLogin() == True):
-            print("Login Successfull")
-            return "ok"
+            print("Login Successful")
+            return True
         else:
             print("Failed to login")
-            return "error"
+            return False
 
     except subprocess.CalledProcessError as e:
         print(e.stderr)
@@ -44,7 +49,7 @@ def checkLogin():
     # Running the AWS STS command to get the caller identity
     command = ["aws", "sts", "get-caller-identity"]
     result = subprocess.run(command, capture_output=True, text=True, check=True)
-    
+
     # Parse the JSON response
     result_json = json.loads(result.stdout)
     username = result_json["Arn"]
@@ -55,5 +60,5 @@ def checkLogin():
     else:
         return False
 
-
-loginAws()
+if __name__ == "__main__":
+    loginAws()

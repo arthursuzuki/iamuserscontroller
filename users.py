@@ -38,5 +38,3 @@ def createUsersException(users):
         print(f"Lista final de usuários: {users}")
     except:
         print("Error creating users exceptions")
-
-getUsersList()

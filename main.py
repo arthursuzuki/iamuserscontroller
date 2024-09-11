@@ -1,10 +1,16 @@
-import os
-from generatepassword import generate_password
 import subprocess
-from users import createUsersException, getUsersList
+from generatepassword import generate_password
+from users import getUsersList,createUsersException
+from login import loginAws
+
 #NAO RODAR
 #se for rodar tirar esse exit()
-exit()
+
+loginAws()
+
+
+print("passo")
+exit(1)
 users = list(getUsersList())
 i = int(input("You have any users exeptions? (1 for yes, other number to continue )"))
 if(i==1):
