@@ -25,7 +25,7 @@ def createUsersException(users):
     for user in lista:
         if user in users:
             users.remove(user)
-            print(f"Usuário {user} removido.")
+            print(f"Usuário {user} removido da lista.")
         else:
             print(f"Usuário {user} não encontrado na lista.")
     
