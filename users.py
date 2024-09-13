@@ -47,6 +47,41 @@ def createUsersList():
     return(users)
 
 
+def readUsersFromCsv():
+    import csv
+
+    csv_file = 'data.csv'
+    users = list()
+    emails = list()
+
+    with open(csv_file, mode='r', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+
+        for row in reader:
+            users.append(row[0])  
+            emails.append(row[1])
+
+    return(users,emails)
+
+
+def matchUsersWithEmail(users):
+    import csv
+    csv_file = 'data.csv'
+    emails = []
+    
+    with open(csv_file, mode='r', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        
+        for row in reader:
+            usuario = row[0]  
+            email = row[1]    
+            
+            if usuario in users:
+                emails.append((usuario, email))
+    
+    return (emails)
+
+
 
 
 

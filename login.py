@@ -1,9 +1,8 @@
-import subprocess
-import os
-from dotenv import load_dotenv
-
 
 def loginAws():
+    from dotenv import load_dotenv
+    import os
+    import subprocess
     load_dotenv()
 
     
@@ -40,9 +39,14 @@ def loginAws():
     #process ends here
 
 
-import json
+
 
 def checkLogin():
+    from dotenv import load_dotenv
+    import os
+    import subprocess
+    import json
+    
     load_dotenv()
     arnKey = os.getenv("CREDENTIALARN")
     
@@ -62,3 +66,4 @@ def checkLogin():
 
 if __name__ == "__main__":
     loginAws()
+    checkLogin()
